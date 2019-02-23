@@ -1,6 +1,6 @@
 # 介绍
 * 基于react-router-breadcrumbs-hoc封装的面包屑组件
-* 项目上传在github，未在npm站点维护，故引用的时候无法通过npm按照
+* 项目上传在github，未在npm站点维护，故引用的时候无法通过npm按装
 
 # 引用
 * 在 `package.json` 文件中的 `dependencies` 添加如下代码:
