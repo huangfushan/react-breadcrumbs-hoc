@@ -2,7 +2,7 @@
   "name": "react-breadcrumbs-hoc",
   "author": "huangfushan",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/huangfushan/react-breadcrumbs-hoc.git"
@@ -10,6 +10,7 @@
 
   "keywords": [
     "react",
+    "react-router-dom",
     "breadcrumbs",
     "react-router-breadcrumbs-hoc"
   ],
