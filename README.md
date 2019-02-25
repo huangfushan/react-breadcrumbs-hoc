@@ -5,7 +5,11 @@
 # 引用
 * 在 `package.json` 文件中的 `dependencies` 添加如下代码:
   ```
-  "react-breadcrumbs-hoc": "https://github.com/huangfushan/react-breadcrumbs-hoc.git"
+  "react-breadcrumbs-hoc": "git+ssh://github@github.com:huangfushan/react-breadcrumbs-hoc.git",
+  ```
+  或者
+  ```
+  "react-breadcrumbs-hoc": "git+ssh://git@git.dayukeji.xin:open/npm/react-breadcrumbs-hoc.git",
   ```
 * npm install
 
