@@ -9,7 +9,7 @@
   ```
   或者
   ```
-  "react-breadcrumbs-hoc": "git+ssh://git@git.dayukeji.xin:open/npm/react-breadcrumbs-hoc.git",
+  "react-breadcrumbs-hoc": "git+ssh://git@git.dayukeji.xin:open/npm/react-dt-breadcrumbs.git",
   ```
 * npm install
 
