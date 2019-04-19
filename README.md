@@ -14,24 +14,25 @@
 * npm install
 
 # 使用
+* 提供两个api，breadcrumbs，作为高阶组件引用，BreadcrumbsCom作为普通组件引用
 * 在不传参数的情况下，默认会引用路由作为面包屑路径，且如果是单词首字母会自动大写。
   ```
     import React from 'react';
-    import ReactBreadcrumbsHOC from 'react-breadcrumbs-hoc';
+    import { breadcrumbs } from 'react-breadcrumbs-hoc';
     
     class Comp extends React.Component {
       render() {
         return (
           <div className="App">
             <div>
-              <p>{i18n.COMMON.USERNAME}</p>
+              <p>首页</p>
             </div>
           </div>
         );
       }
     }
   
-    export default ReactBreadcrumbsHOC()(Comp);
+    export default breadcrumbs()(Comp);
   ```
 * `react-breadcrumbs-hoc` 接收两个参数
     * 第一参数是个对象数组
@@ -39,7 +40,7 @@
     * 在需要调用的的组件中
     ```
       import React from 'react';
-      import ReactBreadcrumbsHOC from 'react-breadcrumbs-hoc';
+      import { breadcrumbs, BreadcrumbsCom } from 'react-breadcrumbs-hoc';
     
       const routes = [
         { path: '/', breadcrumbs: '首页' },
@@ -51,12 +52,37 @@
           return (
             <div className="App">
               <div>
-                <p>{i18n.COMMON.USERNAME}</p>
+                <p>首页</p>
               </div>
             </div>
           );
         }
       }
   
-      export default ReactBreadcrumbsHOC(routes, false)(Comp);
+      export default breadcrumbs(routes, false)(Comp);
+    ```
+    
+    ```
+      import React from 'react';
+      import { breadcrumbs } from 'react-breadcrumbs-hoc';
+    
+      const routes = [
+        { path: '/', breadcrumbs: '首页' },
+        { path: '/user', breadcrumbs: '用户' },
+      ]
+  
+      class Comp extends React.Component {
+        render() {
+          return (
+            <div className="App">
+              <div>
+                <p>首页</p>
+                <BreadcrumbsCom routers={routes}, hasShowHomepage={true}/>
+              </div>
+            </div>
+          );
+        }
+      }
+  
+      export default Comp;
     ```
