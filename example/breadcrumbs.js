@@ -1,5 +1,5 @@
 /**
- * 面包屑
+ * 面包屑高阶
  * @Author: huangfushan
  * @Date: 2019-02-23
  * @Project: react-breadcrumbs-hoc
@@ -16,13 +16,17 @@ function getDisplayName(WrappedComponent) {
 
 const breadcrumbs = (router = [], homepageHasShow = true) => WrappedComponent => {
   const compDisplayName = `breadcrumbs(${getDisplayName(WrappedComponent)})`;
-  const newRouter = router.map((item = {}) => ({ path: item.path, breadcrumb: item.breadcrumb, hascomponent: item.component ? 1 : 0 }));
+  const newRouter = router.map((item = {}) => ({
+    path: item.path,
+    breadcrumb: item.name,
+    hascomponent: item.component ? 1 : 0
+  }));
 
   class Breadcrumbs extends React.Component {
 
     componentWillMount() {
-      if (process.env.NODE_ENV !== 'production' && typeof homepageHasShow !== 'boolean'){
-        console.error(compDisplayName + ': The second parameter should be a boolean')
+      if (process.env.NODE_ENV !== 'production' && typeof homepageHasShow !== 'boolean') {
+        console.error(compDisplayName + ': The second parameter should be a boolean');
       }
     }
 
@@ -44,7 +48,7 @@ const breadcrumbs = (router = [], homepageHasShow = true) => WrappedComponent =>
           )
         );
       });
-      return React.createElement('div', { className: 'breadcrumbs-hoc' }, crumbRender, React.createElement('div'),React.createElement(WrappedComponent, this.props))
+      return React.createElement('div', { className: 'breadcrumbs-hoc' }, crumbRender, React.createElement('div'), React.createElement(WrappedComponent, this.props));
     }
 
     render() {
