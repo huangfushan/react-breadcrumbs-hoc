@@ -14,7 +14,7 @@ function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
 
-const BreadCrumbsHOC = (router = [], homepageHasShow = true) => WrappedComponent => {
+const breadcrumbs = (router = [], homepageHasShow = true) => WrappedComponent => {
   const compDisplayName = `breadcrumbs(${getDisplayName(WrappedComponent)})`;
   const newRouter = router.map((item = {}) => ({ path: item.path, breadcrumb: item.breadcrumb, hascomponent: item.component ? 1 : 0 }));
 
@@ -58,5 +58,5 @@ const BreadCrumbsHOC = (router = [], homepageHasShow = true) => WrappedComponent
   return withBreadcrumbs(newRouter)(Breadcrumbs);
 };
 
-export default BreadCrumbsHOC;
+export default breadcrumbs;
 
